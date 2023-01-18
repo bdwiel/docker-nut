@@ -5,4 +5,6 @@ cd /nut
 UMASK=${UMASK:-022}
 umask "$UMASK"
 
-s6-setuidgid nut python /nut/nut.py --scan --server
+# s6-setuidgid nut python /nut/nut.py --scan --server
+s6-setuidgid nut python /nut/nut.py --compress-all --scan --gen-tinfoil-names
+s6-setuidgid nut python /nut/nut.py --server
